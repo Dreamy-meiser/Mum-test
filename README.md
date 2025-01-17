@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Switch Between Pages</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <title>Thank You Mum</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -28,15 +27,7 @@
       100% { background-position: 0% 50%; }
     }
 
-    .container {
-      display: none;
-    }
-
-    .active {
-      display: block;
-    }
-
-    .letter-container, .second-container {
+    .letter-container {
       background-color: #fff;
       padding: 40px;
       border-radius: 20px;
@@ -52,10 +43,10 @@
     }
 
     h1 {
-      font-family: 'Dancing Script', cursive;
-      color: #27ae60;
+      color: #27ae60; /* Green color */
       font-size: 3em;
       margin-bottom: 20px;
+      font-family: 'Georgia', serif;
       text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
       animation: breathe 3s infinite ease-in-out;
     }
@@ -66,7 +57,6 @@
     }
 
     p {
-      font-family: 'Dancing Script', cursive;
       font-size: 1.3em;
       line-height: 1.8;
       margin-bottom: 20px;
@@ -148,58 +138,70 @@
     .sticker6 { top: 60%; left: 60%; animation-duration: 8s; animation-delay: 5s; }
     .sticker7 { top: 80%; left: 30%; animation-duration: 13s; animation-delay: 6s; }
 
+    /* Marquee styling */
+    .marquee {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .marquee p {
+      display: inline-block;
+      animation: marquee-animation 20s linear infinite;
+    }
+
+    .marquee-bottom {
+      bottom: 0;
+      top: auto;
+    }
+
+    @keyframes marquee-animation {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
   </style>
 </head>
 <body>
-  <button class="button" onclick="showPage('page1')">Show 'Thank You Mum'</button>
-  <button class="button" onclick="showPage('page2')">Show 'I Promise to Work Hard'</button>
-
-  <!-- Thank You Mum Page -->
-  <div id="page1" class="container active">
-    <div class="stickers">
-      <div class="sticker sticker1"><img src="https://img.icons8.com/emoji/96/heart-emoji.png" alt="Heart"></div>
-      <div class="sticker sticker2"><img src="https://img.icons8.com/emoji/96/star-emoji.png" alt="Star"></div>
-      <div class="sticker sticker3"><img src="https://img.icons8.com/emoji/96/rose.png" alt="Rose"></div>
-      <div class="sticker sticker4"><img src="https://img.icons8.com/emoji/96/sun-with-face.png" alt="Sun"></div>
-      <div class="sticker sticker5"><img src="https://img.icons8.com/emoji/96/gift.png" alt="Gift"></div>
-      <div class="sticker sticker6"><img src="https://img.icons8.com/emoji/96/sparkles.png" alt="Sparkles"></div>
-      <div class="sticker sticker7"><img src="https://img.icons8.com/emoji/96/balloon.png" alt="Balloon"></div>
-    </div>
-
-    <div class="letter-container">
-      <h1>Thank You, Mum!</h1>
-      <p>Dear Mum,</p>
-      <p>I cannot express enough how thankful I am for everything you've done for me. Your love, support, and guidance have been my foundation, and I truly appreciate every sacrifice you've made for me to have a better future.</p>
-      <p>Your encouragement has inspired me to work hard and reach for my dreams, and I promise to never take it for granted.</p>
-      <p>Thank you for being my role model and my biggest cheerleader. I am so blessed to have you in my life.</p>
-      <p class="signature">With all my love, <br> Monteli Blessen</p>
-      <button class="button" onclick="showLoveAlert()">Send My Thanks</button>
-    </div>
+  <!-- Marquee above -->
+  <div class="marquee">
+    <p>To the world's most amazing and loving Mum, you are my heart, my joy, and my endless source of strength!</p>
   </div>
 
-  <!-- I Promise to Work Hard Page -->
-  <div id="page2" class="container">
-    <div class="second-container">
-      <h1>I Promise to Work Hard and Repay You</h1>
-      <p>Dear Mum,</p>
-      <p>I will strive to make you proud every day. With all the love and lessons you've taught me, I am committed to working hard to create the future we both dream of.</p>
-      <p>Your sacrifices mean the world to me, and I promise to repay them through my determination and success. I won't stop until I achieve all that we both envision.</p>
-      <p class="signature">With love and gratitude, <br> Monteli Blessen</p>
-      <button class="button" onclick="showLoveAlert()">Send My Promise</button>
-    </div>
+  <!-- Stickers -->
+  <div class="stickers">
+    <div class="sticker sticker1"><img src="https://img.icons8.com/emoji/96/heart-emoji.png" alt="Heart"></div>
+    <div class="sticker sticker2"><img src="https://img.icons8.com/emoji/96/star-emoji.png" alt="Star"></div>
+    <div class="sticker sticker3"><img src="https://img.icons8.com/emoji/96/rose.png" alt="Rose"></div>
+    <div class="sticker sticker4"><img src="https://img.icons8.com/emoji/96/sun-with-face.png" alt="Sun"></div>
+    <div class="sticker sticker5"><img src="https://img.icons8.com/emoji/96/gift.png" alt="Gift"></div>
+    <div class="sticker sticker6"><img src="https://img.icons8.com/emoji/96/sparkles.png" alt="Sparkles"></div>
+    <div class="sticker sticker7"><img src="https://img.icons8.com/emoji/96/balloon.png" alt="Balloon"></div>
+  </div>
+
+  <!-- Letter container -->
+  <div class="letter-container">
+    <h1>Thank You, Mum!</h1>
+    <p>Dear Mum,</p>
+    <p>I cannot express enough how thankful I am for everything you've done for me. Your love, support, and guidance have been my foundation, and I truly appreciate every sacrifice you've made for me to have a better future.</p>
+    <p>Your encouragement has inspired me to work hard and reach for my dreams, and I promise to never take it for granted.</p>
+    <p>Thank you for being my role model and my biggest cheerleader. I am so blessed to have you in my life.</p>
+    <p class="signature">With all my love, <br> Monteli Blessen</p>
+    <button class="button" onclick="showLoveAlert()">Send My Thanks</button>
+  </div>
+
+  <!-- Marquee below -->
+  <div class="marquee marquee-bottom">
+    <p>Your Beloved Ever Loving Son Monteli Blessen Lihalo</p>
   </div>
 
   <script>
-    function showPage(pageId) {
-      // Hide all pages
-      const pages = document.querySelectorAll('.container');
-      pages.forEach(page => page.classList.remove('active'));
-      
-      // Show selected page
-      const selectedPage = document.getElementById(pageId);
-      selectedPage.classList.add('active');
-    }
-
     function showLoveAlert() {
       alert('I love you, Mum! ❤️❤️❤️');
     }
